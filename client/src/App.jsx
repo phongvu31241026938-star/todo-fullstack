@@ -15,7 +15,7 @@ export default function App() {
   // --- LOGIC GIỮ NGUYÊN ---
   const loadEvents = async () => {
     try {
-      const result = await axios.get("http://localhost:8080/api/events");
+      const result = await axios.get("https://todo-fullstack-ymvr.onrender.com/api/events");
       // Sắp xếp: Mới nhất lên đầu
       const sortedEvents = result.data.sort((a, b) => new Date(b.startTime) - new Date(a.startTime));
       setEvents(sortedEvents);
