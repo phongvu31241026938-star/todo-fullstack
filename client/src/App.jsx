@@ -30,11 +30,11 @@ export default function App() {
     e.preventDefault();
     try {
       if (editingId) {
-        await axios.put(`http://localhost:8080/api/events/${editingId}`, formData);
+        await axios.put(`https://todo-fullstack-ymvr.onrender.com/api/events/${editingId}`, formData);
         alert("Cập nhật thành công!");
         setEditingId(null);
       } else {
-        await axios.post("http://localhost:8080/api/events", formData);
+        await axios.post("https://todo-fullstack-ymvr.onrender.com/api/events", formData);
         alert("Thêm mới thành công!");
       }
       setFormData({ title: "", startTime: "", endTime: "" }); 
@@ -46,7 +46,7 @@ export default function App() {
 
   const deleteEvent = async (id) => {
     if (window.confirm("Bạn muốn xóa sự kiện này?")) {
-      await axios.delete(`http://localhost:8080/api/events/${id}`);
+      await axios.delete(`https://todo-fullstack-ymvr.onrender.com/api/events/${id}`);
       loadEvents();
     }
   };
